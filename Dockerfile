@@ -8,7 +8,6 @@
 #	googlethink/tor-browser
 #
 FROM debian:buster-slim
-LABEL maintainer "Google Thinker goooglethink@gmail.com"
 
 RUN apt-get update && apt-get install -y \
 	ca-certificates \
@@ -60,7 +59,7 @@ COPY local.conf /etc/fonts/local.conf
 
 WORKDIR $HOME
 USER user
-EXPOSE 9666
 
 ENTRYPOINT ["/bin/bash"]
+EXPOSE 9666
 CMD [ "/usr/local/bin/Browser/start-tor-browser", "--log", "/dev/stdout" ]
