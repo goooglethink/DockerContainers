@@ -58,5 +58,5 @@ WORKDIR $HOME
 USER user
 
 ENTRYPOINT ["/bin/bash"]
-EXPOSE 9666
+EXPOSE 9150
 CMD [ "/usr/local/bin/Browser/start-tor-browser", "--log", "/dev/stdout" ]
