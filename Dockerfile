@@ -54,9 +54,6 @@ RUN cd /tmp \
 	&& rm -rf tor-browser* "$GNUPGHOME" \
 	&& chown -R user:user /usr/local/bin
 
-# good fonts
-COPY local.conf /etc/fonts/local.conf
-
 WORKDIR $HOME
 USER user
 
