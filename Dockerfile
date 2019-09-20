@@ -1,12 +1,3 @@
-# Run tor browser in a container
-#
-# docker run -v /tmp/.X11-unix:/tmp/.X11-unix \
-#	-v /dev/snd:/dev/snd \
-#	-v /dev/shm:/dev/shm \
-#	-v /etc/machine-id:/etc/machine-id:ro \
-#	-e DISPLAY=unix$DISPLAY \
-#	googlethink/tor-browser
-#
 FROM debian:buster-slim
 
 RUN apt-get update && apt-get install -y \
@@ -57,6 +48,7 @@ RUN cd /tmp \
 WORKDIR $HOME
 USER user
 
-ENTRYPOINT ["/bin/bash"]
 EXPOSE 9150
+
+ENTRYPOINT ["/bin/bash"]
 CMD [ "/usr/local/bin/Browser/start-tor-browser", "--log", "/dev/stdout" ]
